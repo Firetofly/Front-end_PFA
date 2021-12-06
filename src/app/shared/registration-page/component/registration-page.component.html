@@ -1,0 +1,17 @@
+<div>
+  <p>Registration page!</p>
+</div>
+<div><p>firstName</p><br>
+  <input  type="text" [(ngModel)]="firstName" name="firstName"/><br>
+  <p>middleName</p><br>
+  <input  type="text" [(ngModel)]="middleName" name="middleName"/><br>
+  <p>lastName</p><br>
+  <input  type="text" [(ngModel)]="lastName" name="lastName"/><br>
+  <p>login</p><br>
+  <input  type="text" [(ngModel)]="login" name="login"/><br>
+  <p>password</p><br>
+  <input  type="text" [(ngModel)]="password" name="password"/>
+  <br>
+  <br>
+  <button (click)="registration(firstName,middleName,lastName,lastName,password)">To registration</button>
+</div>
