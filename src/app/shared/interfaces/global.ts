@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {User} from "./interfaces";
+import {User} from "./User";
 
 @Injectable()
 export class Global{

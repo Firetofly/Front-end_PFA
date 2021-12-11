@@ -1,11 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {User} from "../../interfaces/interfaces";
+import {User} from "../../interfaces/User";
 import {HttpClient} from '@angular/common/http';
 import {HttpParams} from "@angular/common/http";
 import {AdminService} from "../service/admin.service";
 import {AppComponent} from "../../../app.component";
 import {isNull} from "@angular/compiler/src/output/output_ast";
 import {error} from "@angular/compiler/src/util";
+import {Observable} from "rxjs";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-admin-page',
@@ -16,28 +19,30 @@ import {error} from "@angular/compiler/src/util";
 export class AdminPageComponent implements OnInit {
   @Input() login!: string;
   @Input() id!: number;
-  userArray:User[]=[];
+  userArray!:Observable<User[]>
   user!: User;
 
-  constructor(private adminService: AdminService) {
+  constructor(private adminService: AdminService, private router: Router) {
 
   }
 
-
-
-
   ngOnInit(): void {
+    this.reloadData();
+  }
 
+  reloadData(){
+    this.userArray=this.adminService.findAllUsers();
   }
 
   public getAllUsers(){
-    this.adminService.findAllUsers().subscribe(result=>{
+
+    this.adminService.findAllUsers()/*.subscribe(result=>{
       for(let user of result){
         //user = new User(user.id,user.firstName,user.middleName,user.lastName,user.login);
         console.log(user);
-        this.userArray.push(user);
+        //this.userArray.push(user);
       }
-    })
+    })*/
   }
 
   public getUserByLogin(login: string){
@@ -51,6 +56,24 @@ export class AdminPageComponent implements OnInit {
       this.user=data;
     })
   }
+
+  public deleteUser(login: string){
+    this.adminService.deleteUser(login)
+      .subscribe(data=>{console.log(data);
+                             this.reloadData();},
+                 error => console.log(error));
+  }
+
+  userDetails(login: string){
+    this.router.navigate(['user-details',login])
+  }
+  updateUser(login: string){
+    this.router.navigate(['update-user']);
+  }
+
+
+
+
 
 
 

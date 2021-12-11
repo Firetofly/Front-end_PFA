@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {User} from "../../interfaces/interfaces";
+import {User} from "../../interfaces/User";
 import {LoginService} from "../service/login.service";
 import {HttpClient, HttpParams} from "@angular/common/http";
 
@@ -23,7 +23,7 @@ export class LoginPageComponent implements OnInit {
               private loginService: LoginService) {}
 
   ngOnInit(): void {
-    this.loginService.getLogin(this.login);
+    /*this.loginService.getLogin(this.login);*/
   }
 
   loginUser(login: string, password: string){
@@ -33,6 +33,8 @@ export class LoginPageComponent implements OnInit {
         this.user=result;
         console.log(this.user.id);
         if(this.user.id ==1){
+          this.global.currentUser=this.user;
+          localStorage.setItem('currentUser',JSON.stringify(this.user));
           document.location.href='admin-page';
         }
         else{

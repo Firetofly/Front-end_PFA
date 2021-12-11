@@ -1,3 +1,4 @@
+<!--
 <div>
   <input text="text" [(ngModel)] = "login" name="login"/>
   <button (click)=getUserByLogin(login)>Find user by login</button>
@@ -24,3 +25,31 @@
   </ul>
 </div>
 
+-->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>User list</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>MiddleName</th>
+        <th>LastName</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of userArray | async">
+        <td>{{user.firstName}}</td>
+        <td>{{user.middleName}}</td>
+        <td>{{user.lastName}}</td>
+        <td><button (click)="deleteUser(user.login)" class="btn btn-danger">Delete</button>
+          <button (click)="userDetails(user.login)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

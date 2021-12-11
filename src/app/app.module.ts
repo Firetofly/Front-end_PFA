@@ -10,6 +10,9 @@ import { TransactionsComponent } from './shared/transactions/component/transacti
 import { LoginPageComponent } from './shared/login-page/component/login-page.component';
 import { HomePageComponent } from './shared/home-page/home-page.component';
 import { RegistrationPageComponent } from './shared/registration-page/component/registration-page.component';
+import { UpdateUserComponent } from './shared/admin-page/update-user/update-user.component';
+import { UserDetailsComponent } from './shared/admin-page/user-details/user-details.component';
+
 
 
 
@@ -20,7 +23,9 @@ import { RegistrationPageComponent } from './shared/registration-page/component/
     TransactionsComponent,
     LoginPageComponent,
     HomePageComponent,
-    RegistrationPageComponent
+    RegistrationPageComponent,
+    UpdateUserComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

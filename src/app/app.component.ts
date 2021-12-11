@@ -12,6 +12,7 @@ export class AppComponent{
   constructor(private router: Router) {
   }
 
+
   goAdmin(){
     this.router.navigate(['admin-page']);
   }
