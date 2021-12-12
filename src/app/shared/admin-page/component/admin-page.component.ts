@@ -35,14 +35,7 @@ export class AdminPageComponent implements OnInit {
   }
 
   public getAllUsers(){
-
-    this.adminService.findAllUsers()/*.subscribe(result=>{
-      for(let user of result){
-        //user = new User(user.id,user.firstName,user.middleName,user.lastName,user.login);
-        console.log(user);
-        //this.userArray.push(user);
-      }
-    })*/
+    this.adminService.findAllUsers()
   }
 
   public getUserByLogin(login: string){
@@ -68,7 +61,7 @@ export class AdminPageComponent implements OnInit {
     this.router.navigate(['user-details',login])
   }
   updateUser(login: string){
-    this.router.navigate(['update-user']);
+    this.router.navigate(['update-user',login]);
   }
 
 

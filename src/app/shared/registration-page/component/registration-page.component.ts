@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AdminService} from "../../admin-page/service/admin.service";
 import {RegistrationService} from "../service/registration.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registration-page',
@@ -17,7 +18,7 @@ export class RegistrationPageComponent implements OnInit {
   @Input() password!: string;
 
 
-  constructor(private registrationService: RegistrationService) {
+  constructor(private registrationService: RegistrationService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -28,10 +29,7 @@ export class RegistrationPageComponent implements OnInit {
   }
 
 
-
-
-
-
-
-
+  goHome(){
+    this.router.navigate(['']);
+  }
 }

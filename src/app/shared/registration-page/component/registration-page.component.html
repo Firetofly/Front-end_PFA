@@ -1,17 +1,32 @@
-<div>
-  <p>Registration page!</p>
-</div>
-<div><p>firstName</p><br>
-  <input  type="text" [(ngModel)]="firstName" name="firstName"/><br>
-  <p>middleName</p><br>
-  <input  type="text" [(ngModel)]="middleName" name="middleName"/><br>
-  <p>lastName</p><br>
-  <input  type="text" [(ngModel)]="lastName" name="lastName"/><br>
-  <p>login</p><br>
-  <input  type="text" [(ngModel)]="login" name="login"/><br>
-  <p>password</p><br>
-  <input  type="text" [(ngModel)]="password" name="password"/>
-  <br>
-  <br>
-  <button (click)="registration(firstName,middleName,lastName,lastName,password)">To registration</button>
-</div>
+<h3 style="margin-left:41%">Registration page</h3>
+
+<div style="width: 400px; margin-left: auto; margin-right: auto">
+  <div class="form-group">
+    <p style="font-weight: bold; margin-left: 5px">First name:</p>
+    <input  type="text" class="form-control"  [(ngModel)]="firstName" name="firstName" placeholder="Enter first name"/><br>
+  </div>
+  <div class="form-group">
+    <p style="font-weight: bold;">Middle name:</p>
+    <input  type="text" class="form-control" [(ngModel)]="middleName" name="middleName" placeholder="Enter middle name"/><br>
+  </div>
+  <div class="form-group">
+    <p style="font-weight: bold;">Last name:</p>
+    <input  type="text" class="form-control" [(ngModel)]="lastName" name="lastName" placeholder="Enter last name"/><br>
+  </div>
+  <div class="form-group">
+    <p style="font-weight: bold;">Login:</p>
+    <input  type="text" class="form-control" [(ngModel)]="login" name="login" placeholder="Enter login"/><br>
+  </div>
+  <div class="form-group">
+    <p style="font-weight: bold;">Password:</p>
+    <input  type="text" class="form-control" [(ngModel)]="password" name="password" placeholder="Enter password"/>
+  </div>
+    <br>
+    <br>
+    <button (click)="registration(firstName,middleName,lastName,login,password)"
+            class="btn btn-success"
+            style="margin-left:90px; width: 100px">Sign Up</button>
+    <button (click)="goHome()" class="btn btn-success"
+            style="margin-left:10px; background-color: darkred; width: 100px">To main</button>
+  </div>
+

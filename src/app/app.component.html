@@ -1,11 +1,44 @@
-<div>
-    <button (click)="goAdmin()" class="glo">Admin page</button>
-    <button class="glo" (click)="goTransactions()">Transactions</button>
-    <button class="glo" (click)="goHome()">Main</button>
-    <button class="glo" (click)="goRegistration()">Registration</button>
-    <button class="glo" (click)="goLogin()">Login</button>
-  <router-outlet></router-outlet>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+<!--  <button (click)="goAdmin()" class="glo">Admin page</button>
+  <button class="glo" (click)="goTransactions()">Transactions</button>
+  <button class="glo" (click)="goHome()">Main</button>
+  <button class="glo" (click)="goRegistration()">Registration</button>
+  <button class="glo" (click)="goLogin()">Login</button>
+  <router-outlet></router-outlet>-->
+
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a routerLink="admin-page" class="nav-link" routerLinkActive="active">AdminControl</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="home-page" class="nav-link" routerLinkActive="active">Main page</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="reg-page" class="nav-link" routerLinkActive="active">Registration</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="login-page" class="nav-link" routerLinkActive="active">Login</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container">
+  <br>
+  <h2 style="text-align: center;">Personal finance assistant</h2>
+  <hr>
+  <div class="card">
+    <div class="card-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
+
+<footer class="footer">
+  <div class="container">
+    <span>Authored by Fomin Sergey</span>
+  </div>
+</footer>
+
 
 
 <!--

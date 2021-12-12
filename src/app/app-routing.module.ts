@@ -18,8 +18,8 @@ const routes: Routes = [
   {path: 'login-page', component:LoginPageComponent},
   {path: 'reg-page', component:RegistrationPageComponent},
   {path: 'home-page', component: HomePageComponent},
-  {path: 'user-details', component: UserDetailsComponent},
-  {path:'update-user', component: UpdateUserComponent}
+  {path: 'user-details/:login', component: UserDetailsComponent},
+  {path:'update-user/:login', component: UpdateUserComponent}
 ];
 
 @NgModule({

@@ -12,6 +12,7 @@ import { HomePageComponent } from './shared/home-page/home-page.component';
 import { RegistrationPageComponent } from './shared/registration-page/component/registration-page.component';
 import { UpdateUserComponent } from './shared/admin-page/update-user/update-user.component';
 import { UserDetailsComponent } from './shared/admin-page/user-details/user-details.component';
+import {AdminService} from "./shared/admin-page/service/admin.service";
 
 
 
@@ -33,7 +34,7 @@ import { UserDetailsComponent } from './shared/admin-page/user-details/user-deta
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

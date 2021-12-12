@@ -22,7 +22,6 @@ export class UpdateUserComponent implements OnInit {
     this.user=new User();
 
     this.login=this.route.snapshot.params['login'];
-
     this.adminService.findUserByLogin(this.login)
       .subscribe(data=>{console.log(data);
                              this.user=data;},
@@ -30,8 +29,9 @@ export class UpdateUserComponent implements OnInit {
   }
 
   updateUser(){
-    this.adminService.updateUser(this.login,this.user)
-      .subscribe(data=>{console.log(data); this.user=new User();
+    this.adminService.updateUser(this.login,this.user.firstName,this.user.middleName,this.user.lastName)
+      .subscribe(data=>{console.log(data);
+      this.user=new User();
       this.gotoList();},
         error => console.log(error))
   }

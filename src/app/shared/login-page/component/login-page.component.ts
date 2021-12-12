@@ -40,7 +40,7 @@ export class LoginPageComponent implements OnInit {
         else{
         this.global.currentUser=this.user;
         localStorage.setItem('currentUser',JSON.stringify(this.user));
-        document.location.href='';
+        document.location.href='home-page';
         }
       }
     })

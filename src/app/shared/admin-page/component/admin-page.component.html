@@ -1,34 +1,7 @@
-<!--
-<div>
-  <input text="text" [(ngModel)] = "login" name="login"/>
-  <button (click)=getUserByLogin(login)>Find user by login</button>
-    <p>User's last name: {{user?.lastName}}</p>
-    <p>User's first name: {{user?.firstName}}</p>
-    <p>User's login: {{user?.login}}</p>
-</div>
-<div>
-  <input text="number" [(ngModel)]="id" name="id"/>
-  <button (click)="getUserById(id)">Find user by id</button>
-    <p>User's last name: {{user?.lastName}}</p>
-    <p>User's first name: {{user?.firstName}}</p>
-    <p>User's login: {{user?.login}}</p>
-</div>
-<div>
-  <button (click)="getAllUsers()">Find all users</button>
-  <ul>
-    <li *ngFor="let elem of userArray">
-      <p>User's number: {{elem?.id}}</p>
-      <p>User's last name: {{elem?.lastName}}</p>
-      <p>User's first name: {{elem?.firstName}}</p>
-      <p>User's login: {{elem?.login}}</p>
-    </li>
-  </ul>
-</div>
 
--->
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h2>User list</h2>
+    <h2 style="margin-left: 42.5%">All users</h2>
   </div>
   <div class="panel-body">
     <table class="table table-striped">
@@ -45,8 +18,10 @@
         <td>{{user.firstName}}</td>
         <td>{{user.middleName}}</td>
         <td>{{user.lastName}}</td>
-        <td><button (click)="deleteUser(user.login)" class="btn btn-danger">Delete</button>
+        <td>
+          <button (click)="deleteUser(user.login)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
           <button (click)="userDetails(user.login)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          <button (click)="updateUser(user.login)" class="btn btn-info" style="margin-left: 10px">Update</button>
         </td>
       </tr>
       </tbody>

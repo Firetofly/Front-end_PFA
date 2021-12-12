@@ -1,4 +1,4 @@
-<div class="wrapper">
+<!--<div class="wrapper">
   <div class = login>
     <div ><p>Login</p>
       <input   class = 'first' type="text" placeholder = "login:" [(ngModel)] = "login" name="login" />
@@ -8,6 +8,27 @@
     </div>
     <div >
       <button  class = 'loginbtn' (click)=loginUser(login,password)>Enter</button>
+    </div>
+  </div>
+</div>-->
+
+<div class="container col-lg-6">
+  <h1 class="text-center">Login</h1>
+  <div class="card">
+    <div class="card-body" style="margin-left: 29%">
+      <form class="form-group">
+        <div class="form-group">
+          <label for="login" style="font-weight: bold;margin-left: 10px">Login:</label>
+          <input type="text" class="form-control" id="login" [(ngModel)]="login" placeholder="Enter User login"
+                 name="login">
+        </div>
+        <div class="form-group">
+          <label for="password" style="font-weight: bold; margin-left: 10px">Password:</label>
+          <input type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Enter  password"
+                 name="password">
+        </div>
+        <button (click)=loginUser(login,password) class="btn btn-success">Sign in</button>
+      </form>
     </div>
   </div>
 </div>

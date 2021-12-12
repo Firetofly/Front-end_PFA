@@ -4,8 +4,12 @@ import {User} from "../../interfaces/User";
 import {Observable} from "rxjs";
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AdminService {
+
+  private baseUrl = 'http://localhost:8090/admin/';
 
   constructor(private http: HttpClient) {
 
@@ -27,12 +31,15 @@ export class AdminService {
     })
   }
 
-  updateUser(login: string, value: any): Observable<Object>{
-    return this.http.put('http://localhost:8090/admin/update-client',value);
+  updateUser(login: string, firstName:string, middleName: string, lastName: string): Observable<Object>{
+    return this.http.put('http://localhost:8090/admin/update-client',
+      {login,firstName,middleName,lastName});
   }
 
+
   deleteUser(login: string):Observable<any>{
-    return this.http.delete('http://localhost:8090/admin/delete-client',{responseType: 'text'});
+    return this.http.delete('http://localhost:8090/admin/delete-client',
+      {params: new HttpParams().set('login',login)})
   }
 
 }
