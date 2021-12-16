@@ -11,11 +11,7 @@ export class LoginService {
 
   }
 
-  /*login(login: string, password: string){
-    this.http.post('http://localhost:8090/user/login',{login,password})
-  }*/
-
   public getLogin(login: string){
-    this.http.get<User>('http://localhost:8090/user/login',{params: new HttpParams().set('login',login)})
+    this.http.get<User>('http://localhost:8090/login',{params: new HttpParams().set('login',login)})
   }
 }

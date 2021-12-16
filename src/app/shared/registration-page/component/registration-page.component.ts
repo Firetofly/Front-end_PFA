@@ -26,10 +26,11 @@ export class RegistrationPageComponent implements OnInit {
 
   registration(firstName: string, middleName: string, lastName: string, login:string, password: string){
      this.registrationService.createUser(firstName, middleName, lastName, login, password)
+    this.router.navigate(['login-page']);
   }
 
 
   goHome(){
-    this.router.navigate(['']);
+    this.router.navigate(['home-page']);
   }
 }

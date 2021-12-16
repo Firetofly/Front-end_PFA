@@ -1,24 +1,60 @@
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-<!--  <button (click)="goAdmin()" class="glo">Admin page</button>
-  <button class="glo" (click)="goTransactions()">Transactions</button>
-  <button class="glo" (click)="goHome()">Main</button>
-  <button class="glo" (click)="goRegistration()">Registration</button>
-  <button class="glo" (click)="goLogin()">Login</button>
-  <router-outlet></router-outlet>-->
-
+<!--<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
   <ul class="navbar-nav">
-    <li class="nav-item">
-      <a routerLink="admin-page" class="nav-link" routerLinkActive="active">AdminControl</a>
-    </li>
     <li class="nav-item">
       <a routerLink="home-page" class="nav-link" routerLinkActive="active">Main page</a>
     </li>
+    <div *ngIf="isLoginAdmin; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <li class="nav-item">
+        <button class="nav-link" routerLink="admin-page" routerLinkActive="active">Admin control</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" routerLink="home-page" routerLinkActive="active" (click)="removeUser()">Logout</button>
+      </li>
+    </ng-template>
+    <ng-template #elseBlock>
+      <div *ngIf="isLoginUser; then thenPart else elsePart"></div>
+      <ng-template #thenPart><li class="nav-item">
+        <button class="nav-link" routerLink="home-page" routerLinkActive="active">Home</button>
+      </li>
+        <li class="nav-item">
+          <button class="nav-link" routerLink="transactions" routerLinkActive="active">Transactions</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" routerLink="home-page" routerLinkActive="active" (click)="removeUser()">Logout</button>
+        </li>
+        </ng-template>
+      <ng-template #elsePart>
+        <li class="nav-item">
+          <a routerLink="login-page" class="nav-link" routerLinkActive="active">Login</a>
+        </li>
+      </ng-template>
+    </ng-template>
+  </ul>
+</nav>-->
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
     <li class="nav-item">
-      <a routerLink="reg-page" class="nav-link" routerLinkActive="active">Registration</a>
+      <a routerLink="home-page" class="nav-link" routerLinkActive="active">Main page</a>
     </li>
-    <li class="nav-item">
-      <a routerLink="login-page" class="nav-link" routerLinkActive="active">Login</a>
-    </li>
+    <div *ngIf="global.currentUser; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <li class="nav-item">
+        <button class="nav-link" routerLink="transactions" routerLinkActive="active">Transactions</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" routerLink="home-page" routerLinkActive="active" (click)="removeUser()">Sign out</button>
+      </li>
+    </ng-template>
+    <ng-template #elseBlock>
+      <li class="nav-item">
+        <button class="nav-link" routerLink="reg-page" routerLinkActive="active">Sign up</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" routerLink="login-page" routerLinkActive="active">Sign in</button>
+      </li>
+    </ng-template>
   </ul>
 </nav>
 
@@ -39,10 +75,3 @@
   </div>
 </footer>
 
-
-
-<!--
-<div><input text="text" [(ngModel)] = "login" name="login"/>
-  <button (click)=output(login)>Войти</button>
-</div>
--->

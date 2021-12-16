@@ -20,27 +20,27 @@ export class LoginPageComponent implements OnInit {
 
   constructor(private http: HttpClient,
               private global: Global,
-              private loginService: LoginService) {}
+              private loginService: LoginService) {
+    this.user=global.currentUser;
+  }
 
   ngOnInit(): void {
-    /*this.loginService.getLogin(this.login);*/
+
   }
 
   loginUser(login: string, password: string){
-    this.http.post<User>('http://localhost:8090/user/login',{login,password}).subscribe(result=>{
+    this.http.post<User>('http://localhost:8090/login',{login,password}).subscribe(result=>{
       console.log(result);
       if(result){
         this.user=result;
-        console.log(this.user.id);
-        if(this.user.id ==1){
-          this.global.currentUser=this.user;
-          localStorage.setItem('currentUser',JSON.stringify(this.user));
+        console.log(this.user.login);
+        if(this.user.login=='fomin-sa'){
           document.location.href='admin-page';
         }
         else{
-        this.global.currentUser=this.user;
-        localStorage.setItem('currentUser',JSON.stringify(this.user));
-        document.location.href='home-page';
+          this.global.currentUser=this.user;
+          localStorage.setItem('currentUser',JSON.stringify(this.user));
+          document.location.href='home-page';
         }
       }
     })
