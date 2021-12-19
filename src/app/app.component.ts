@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {Global} from "./shared/interfaces/global";
-import {global} from "@angular/compiler/src/util";
+
 
 
 @Component({

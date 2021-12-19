@@ -19,7 +19,7 @@ import {Router} from "@angular/router";
 export class AdminPageComponent implements OnInit {
   @Input() login!: string;
   @Input() id!: number;
-  userArray!:Observable<User[]>
+  userArray!:Observable<User[]>;
   user!: User;
 
   constructor(private adminService: AdminService, private router: Router) {

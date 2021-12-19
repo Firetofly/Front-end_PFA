@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 })
 export class AdminService {
 
-  private baseUrl = 'http://localhost:8090/admin/';
+  //private baseUrl = 'http://localhost:8090/admin/';
 
   constructor(private http: HttpClient) {
 

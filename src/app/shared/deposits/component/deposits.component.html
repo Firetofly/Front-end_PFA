@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2 style="margin-left: 42.5%">User's deposits</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Currency</th>
+        <th>Value</th>
+        <th>Name</th>
+        <th>Percent</th>
+        <th>Income</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let deposit of depositArray | async">
+        <td>{{deposit.currency}}</td>
+        <td>{{deposit.value}}</td>
+        <td>{{deposit.name}}</td>
+        <td>{{deposit.percent}}</td>
+        <td>{{deposit.income}}</td>
+        <!--<td>
+          <button (click)="deleteUser(user.login)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+          <button (click)="userDetails(user.login)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          <button (click)="updateUser(user.login)" class="btn btn-info" style="margin-left: 10px">Update</button>
+        </td>-->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

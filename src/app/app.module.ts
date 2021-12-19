@@ -13,8 +13,9 @@ import { RegistrationPageComponent } from './shared/registration-page/component/
 import { UpdateUserComponent } from './shared/admin-page/update-user/update-user.component';
 import { UserDetailsComponent } from './shared/admin-page/user-details/user-details.component';
 import {AdminService} from "./shared/admin-page/service/admin.service";
-
-
+import {DepositsComponent} from "./shared/deposits/component/deposits.component";
+import {DepositService} from "./shared/deposits/service/deposit.service";
+import {Global} from "./shared/interfaces/global";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {AdminService} from "./shared/admin-page/service/admin.service";
     HomePageComponent,
     RegistrationPageComponent,
     UpdateUserComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    DepositsComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,7 @@ import {AdminService} from "./shared/admin-page/service/admin.service";
     HttpClientModule,
     FormsModule
   ],
-  providers: [AdminService],
+  providers: [AdminService,Global,DepositService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
