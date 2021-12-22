@@ -10,6 +10,7 @@ import {RegistrationPageComponent} from "./shared/registration-page/component/re
 import {UserDetailsComponent} from "./shared/admin-page/user-details/user-details.component";
 import {UpdateUserComponent} from "./shared/admin-page/update-user/update-user.component";
 import {DepositsComponent} from "./shared/deposits/component/deposits.component";
+import {CreateDepositComponent} from "./shared/deposits/create-deposit/create-deposit.component";
 
 
 const routes: Routes = [
@@ -20,8 +21,9 @@ const routes: Routes = [
   {path: 'reg-page', component:RegistrationPageComponent},
   {path: 'home-page', component: HomePageComponent},
   {path: 'user-details/:login', component: UserDetailsComponent},
-  {path:'update-user/:login', component: UpdateUserComponent},
-  {path:'deposits',component:DepositsComponent}
+  {path: 'update-user/:login', component: UpdateUserComponent},
+  {path: 'deposits',component:DepositsComponent},
+  {path: 'create-deposit',component:CreateDepositComponent}
 ];
 
 @NgModule({

@@ -16,6 +16,8 @@ import {AdminService} from "./shared/admin-page/service/admin.service";
 import {DepositsComponent} from "./shared/deposits/component/deposits.component";
 import {DepositService} from "./shared/deposits/service/deposit.service";
 import {Global} from "./shared/interfaces/global";
+import { CreateDepositComponent } from './shared/deposits/create-deposit/create-deposit.component';
+import {ClientDeposit} from "./shared/interfaces/ClientDeposit";
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import {Global} from "./shared/interfaces/global";
     UpdateUserComponent,
     UserDetailsComponent,
     DepositsComponent,
+    CreateDepositComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import {Global} from "./shared/interfaces/global";
     HttpClientModule,
     FormsModule
   ],
-  providers: [AdminService,Global,DepositService],
+  providers: [AdminService,Global,DepositService,ClientDeposit],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

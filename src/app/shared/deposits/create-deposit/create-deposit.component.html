@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="card col-md-6 offset-md-3 offset-md-3">
+    <div class="row">
+      <h3 class="text-center">Create Deposit</h3>
+      <hr />
+      <div class="card-body">
+        <div class="form-group">
+          <div class="form-group">
+            <label>Deposit name</label>
+            <input type="text" class="form-control" [(ngModel)]="name"
+                   name="name"/>
+          </div>
+          <div class="form-group">
+            <label>Value</label>
+            <input type="text" class="form-control" [(ngModel)]="value"
+                   name="value"/>
+          </div>
+          <div class="form-group">
+            <label>Percent, %</label>
+            <input type="text" class="form-control" [(ngModel)]="percent"
+                   name="percent"/>
+          </div>
+          <div class="form-group">
+            <label>Currency</label>
+            <input type="text" class="form-control" [(ngModel)]="currency"
+                   name="currency"/>
+          </div>
+          <br />
+          <button class="btn btn-success" (click)="addDeposit(name,value,percent,currency)">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

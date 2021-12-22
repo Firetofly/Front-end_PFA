@@ -20,7 +20,6 @@ export class UpdateUserComponent implements OnInit {
 
   ngOnInit() {
     this.user=new User();
-
     this.login=this.route.snapshot.params['login'];
     this.adminService.findUserByLogin(this.login)
       .subscribe(data=>{console.log(data);

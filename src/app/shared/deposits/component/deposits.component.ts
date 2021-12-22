@@ -7,6 +7,7 @@ import {Deposit} from "../../interfaces/Deposit";
 import {Global} from "../../interfaces/global";
 import {User} from "../../interfaces/User";
 import {AdminService} from "../../admin-page/service/admin.service";
+import {global} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-deposits',
@@ -16,8 +17,10 @@ import {AdminService} from "../../admin-page/service/admin.service";
 export class DepositsComponent implements OnInit {
 
   depositArray:Observable<Deposit[]>;
-  private globalUser: Global;
-  constructor(private depositService: DepositService,private router: Router,private adminService:AdminService) {
+
+  deposit:Deposit;
+  constructor(private depositService: DepositService,private router: Router,
+              private adminService:AdminService,private globalUser: Global) {
 
   }
 
@@ -26,7 +29,10 @@ export class DepositsComponent implements OnInit {
   }
 
   public reloadData() {
-    //console.log(this.globalUser.currentUser.login);
     this.depositArray = this.depositService.findAllDeposits()
+  }
+
+  createDeposit(){
+    this.router.navigate(['create-deposit'])
   }
 }

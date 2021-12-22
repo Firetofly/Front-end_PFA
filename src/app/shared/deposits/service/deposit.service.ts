@@ -17,11 +17,18 @@ export class DepositService {
   }
 
   public findAllDeposits():Observable<Deposit[]>{
-    console.log(this.globalUser.currentUser.login);
     return this.http.get<Deposit[]>('http://localhost:8090/deposit/all-client-deposits',
       {params:new HttpParams().set('login',this.globalUser.currentUser.login)})
-
-
   }
+
+  public saveDeposit(login:string,name:string,value:number,percent:number,currency:string):Observable<Object>{
+    return this.http.post("http://localhost:8090/deposit/create-deposit",{login,name,value,percent,currency});
+  }
+
+/*  public saveDeposit(login:string,name:string,value:number,percent:number,currency:string):Observable<Object>{
+    return this.http.post("http://localhost:8090/deposit/create-deposit",
+      {params:new HttpParams().set('login',this.globalUser.currentUser.login).set('name',name)
+            .set('value',value).set('percent',percent).set('currency',currency)});
+  }*/
 
 }
