@@ -21,8 +21,9 @@ export class DepositService {
       {params:new HttpParams().set('login',this.globalUser.currentUser.login)})
   }
 
-  public saveDeposit(login:string,name:string,value:number,percent:number,currency:string):Observable<Object>{
-    return this.http.post("http://localhost:8090/deposit/create-deposit",{login,name,value,percent,currency});
+  public saveDeposit(clientLogin:string,depositName:string,depositValue:number,depositPercent:number,depositCurrency:string):Observable<Object>{
+    return this.http.post("http://localhost:8090/deposit/create-deposit",{clientLogin,depositName,depositValue
+      ,depositPercent,depositCurrency});
   }
 
 /*  public saveDeposit(login:string,name:string,value:number,percent:number,currency:string):Observable<Object>{

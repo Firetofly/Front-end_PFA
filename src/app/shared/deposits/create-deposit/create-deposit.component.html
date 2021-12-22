@@ -7,26 +7,26 @@
         <div class="form-group">
           <div class="form-group">
             <label>Deposit name</label>
-            <input type="text" class="form-control" [(ngModel)]="name"
-                   name="name"/>
+            <input type="text" class="form-control" [(ngModel)]="depositName"
+                   name="depositName"/>
           </div>
           <div class="form-group">
             <label>Value</label>
-            <input type="text" class="form-control" [(ngModel)]="value"
-                   name="value"/>
+            <input type="text" class="form-control" [(ngModel)]="depositValue"
+                   name="depositValue"/>
           </div>
           <div class="form-group">
             <label>Percent, %</label>
-            <input type="text" class="form-control" [(ngModel)]="percent"
-                   name="percent"/>
+            <input type="text" class="form-control" [(ngModel)]="depositPercent"
+                   name="depositPercent"/>
           </div>
           <div class="form-group">
             <label>Currency</label>
-            <input type="text" class="form-control" [(ngModel)]="currency"
-                   name="currency"/>
+            <input type="text" class="form-control" [(ngModel)]="depositCurrency"
+                   name="depositCurrency"/>
           </div>
           <br />
-          <button class="btn btn-success" (click)="addDeposit(name,value,percent,currency)">Create</button>
+          <button class="btn btn-success" (click)="addDeposit(depositName,depositValue,depositPercent,depositCurrency)">Create</button>
       </div>
     </div>
   </div>

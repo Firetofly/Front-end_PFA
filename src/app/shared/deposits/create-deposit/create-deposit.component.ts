@@ -6,6 +6,7 @@ import {AdminService} from "../../admin-page/service/admin.service";
 import {Global} from "../../interfaces/global";
 import {User} from "../../interfaces/User";
 import {ClientDeposit} from "../../interfaces/ClientDeposit";
+;
 
 
 
@@ -18,11 +19,11 @@ export class CreateDepositComponent implements OnInit {
 
   //private globalUser: Global;
   //deposit: Deposit;
-  @Input() name!:string;
-  @Input() value!:number;
-  @Input() percent!:number;
-  @Input() currency!:string;
-  login: string;
+  @Input() depositName!:string;
+  @Input() depositValue!:number;
+  @Input() depositPercent!:number;
+  @Input() depositCurrency!:string;
+  clientLogin: string;
 
 
   user!:User;
@@ -35,9 +36,17 @@ export class CreateDepositComponent implements OnInit {
     //this.login=this.route.snapshot.params['login'];
   }
 
-  public addDeposit(name:string,value:number,percent:number,currency:string){
-    this.login=this.globalUser.currentUser.login;
-    this.depositService.saveDeposit(this.login,name,value,percent,currency).subscribe(result=>{
+  public addDeposit(depositName:string,depositValue:number,depositPercent:number,depositCurrency:string){
+
+    this.clientLogin=this.globalUser.currentUser.login;
+    console.log(this.clientLogin)
+    console.log(this.depositName)
+    console.log(this.depositValue)
+    console.log(this.depositPercent)
+    console.log(this.depositCurrency)
+
+    this.depositService.saveDeposit(this.clientLogin,depositName,depositValue
+                                    ,depositPercent,depositCurrency).subscribe(result=>{
       console.log('Result: '+result);
       this.router.navigate(['deposits'])},
       error => console.log(error))
